@@ -1,0 +1,22 @@
+{
+  "name": "file-crud-node-october",
+  "version": "1.0.0",
+  "description": "File Based CRUD Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanshuhassija/file-crud-node-october.git"
+  },
+  "author": "vanshuhassija",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanshuhassija/file-crud-node-october/issues"
+  },
+  "homepage": "https://github.com/vanshuhassija/file-crud-node-october#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
