@@ -61,4 +61,44 @@ app.post("/todo",function(req,res){
     })
 })
 
+
+
+app.get("/todo/:todoId",function(req,res){
+    fs.readFile(`${req.params.todoId}.json`,"utf-8",function(err,fileData){
+        if(err){
+            res.status(400).send("Could not read file");
+        }
+        else{
+            res.status(200).send(fileData)
+        }
+    })
+})
+
+//1. Read the file mentioned
+//2. If File is present then updtae the data
+//3. If file is not present throw error
+
+app.put("/todo/:todoId",function(req,res){
+    fs.appendFile(`${req.params.todoId}.json`,JSON.stringify(req.body),"utf-8",function(err){
+        if(err){
+            res.status(400).send("Could not write file");
+        }
+        else{
+            res.status(200).send("File Written Successfully");
+        }
+    })
+})
+
+app.delete("/todo/:todoId",function(req,res){
+    fs.rm(`${req.params.todoId}.json`,function(err){
+        if(err){
+            res.status(400).send("Could not delete file");
+        }
+        else{
+            res.status(200).send("File Deleted Successfully");
+        }
+    })
+})
+
+
 app.listen(8080)
